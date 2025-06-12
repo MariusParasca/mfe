@@ -8,8 +8,8 @@ import { PlaylistContent } from "@repo/playlist-content/PlaylistContent";
 const App = () => {
   return (
     <AppShell
-      title='Movies'
-      colorScheme='light'
+      title='Playlist'
+      colorScheme='dark'
       routes={[
         {
           path: "/",
