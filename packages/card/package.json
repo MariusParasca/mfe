@@ -1,9 +1,10 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/card",
   "version": "0.0.0",
   "private": true,
+  "main": "./src/index.tsx",
   "exports": {
-    "./*": "./src/*.tsx"
+    ".": "./src/index.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -22,9 +23,9 @@
   },
   "dependencies": {
     "@mantine/core": "^8.1.0",
+    "@mantine/hooks": "^8.1.0",
+    "@repo/store": "workspace:*",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.2",
-    "@repo/store": "workspace:*"
+    "react-dom": "^19.1.0"
   }
 }

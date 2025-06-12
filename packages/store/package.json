@@ -1,9 +1,10 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/store",
   "version": "0.0.0",
   "private": true,
+  "main": "./src/index.tsx",
   "exports": {
-    "./*": "./src/*.tsx"
+    ".": "./src/index.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -21,10 +22,6 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
-    "@mantine/core": "^8.1.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.2",
-    "@repo/store": "workspace:*"
+    "zustand": "^5.0.5"
   }
 }

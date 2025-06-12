@@ -57,6 +57,9 @@ importers:
 
   apps/movies:
     dependencies:
+      '@repo/card':
+        specifier: workspace:*
+        version: link:../../packages/card
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -141,6 +144,49 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
+  packages/card:
+    dependencies:
+      '@mantine/core':
+        specifier: ^8.1.0
+        version: 8.1.0(@mantine/hooks@8.1.0)(@types/react@19.1.0)(react-dom@19.1.0)(react@19.1.0)
+      '@mantine/hooks':
+        specifier: ^8.1.0
+        version: 8.1.0(react@19.1.0)
+      '@repo/store':
+        specifier: workspace:*
+        version: link:../store
+      react:
+        specifier: ^19.1.0
+        version: 19.1.0
+      react-dom:
+        specifier: ^19.1.0
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@turbo/gen':
+        specifier: ^2.5.0
+        version: 2.5.4(@types/node@22.15.31)(typescript@5.8.2)
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.15.31
+      '@types/react':
+        specifier: 19.1.0
+        version: 19.1.0
+      '@types/react-dom':
+        specifier: 19.1.1
+        version: 19.1.1(@types/react@19.1.0)
+      eslint:
+        specifier: ^9.28.0
+        version: 9.28.0
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
@@ -177,6 +223,37 @@ importers:
         specifier: ^8.33.0
         version: 8.34.0(eslint@9.28.0)(typescript@5.8.2)
 
+  packages/store:
+    dependencies:
+      zustand:
+        specifier: ^5.0.5
+        version: 5.0.5(@types/react@19.1.0)
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@turbo/gen':
+        specifier: ^2.5.0
+        version: 2.5.4(@types/node@22.15.31)(typescript@5.8.2)
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.15.31
+      '@types/react':
+        specifier: 19.1.0
+        version: 19.1.0
+      '@types/react-dom':
+        specifier: 19.1.1
+        version: 19.1.1(@types/react@19.1.0)
+      eslint:
+        specifier: ^9.28.0
+        version: 9.28.0
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+
   packages/typescript-config: {}
 
   packages/ui:
@@ -184,6 +261,9 @@ importers:
       '@mantine/core':
         specifier: ^8.1.0
         version: 8.1.0(@mantine/hooks@8.1.0)(@types/react@19.1.0)(react-dom@19.1.0)(react@19.1.0)
+      '@repo/store':
+        specifier: workspace:*
+        version: link:../store
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -5369,3 +5449,24 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand@5.0.5(@types/react@19.1.0):
+    resolution: {integrity: sha512-mILtRfKW9xM47hqxGIxCv12gXusoY/xTSHBYApXozR0HmQv299whhBeeAcRy+KrPPybzosvJBCOmVjq6x12fCg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
+    dependencies:
+      '@types/react': 19.1.0
+    dev: false

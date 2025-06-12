@@ -2,6 +2,7 @@ import { AppShell } from "@repo/ui/AppShell";
 import "./App.css";
 
 import React from "react";
+import { MoviesContent } from "./MoviesContent";
 
 const App = () => {
   return (
@@ -11,7 +12,21 @@ const App = () => {
       routes={[
         {
           path: "/",
-          element: () => <div>Welcome to the Movies App</div>,
+          element: () => <MoviesContent />,
+        },
+        {
+          path: "/playlist",
+          element: () => <div>Playlist Page</div>,
+        },
+      ]}
+      navLinks={[
+        {
+          label: "Home",
+          path: "/",
+        },
+        {
+          label: "Playlist",
+          path: "/playlist",
         },
       ]}
     />
